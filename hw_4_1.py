@@ -1,9 +1,17 @@
 # Модуль 4. Завдання 1
 
+# Питання:
+# Використав тут:       if path_file.exists():  with open(...)
+# Напевно варто було    try: with open(...)
+#                       except FileNotFoundError:
+#                           return "Не вдалося знайти файл."
+# try ... except краще?
+
 import os
 from pathlib import Path
 
 # Функція підраховує сумарну і середню зарплату за даними зі вказаного файла
+
 
 def total_salary(path):
     path_file = Path(path)
@@ -31,7 +39,7 @@ def total_salary(path):
 
 
 # Основна програма
-    
+
 os.system("cls")
 
 total, average = total_salary("salary_file.txt")
