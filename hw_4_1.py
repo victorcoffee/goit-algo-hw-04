@@ -1,4 +1,5 @@
 # Модуль 4. Завдання 1
+
 import os
 from pathlib import Path
 
@@ -30,6 +31,7 @@ def total_salary(path):
 
 
 # Основна програма
+    
 os.system("cls")
 
 total, average = total_salary("salary_file.txt")
