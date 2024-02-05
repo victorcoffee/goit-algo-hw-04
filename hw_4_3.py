@@ -1,37 +1,32 @@
-# Не встигаю завершити завдання 3, яке помічене як необов'язкове.
-# Але маю намір зробити його.
-# Чи можна доздати його пізніше?
-
 # Модуль 4. Завдання 3
 
 import sys, os
 from pathlib import Path
 
+# from colorama import Fore, Back, Style
+
 
 def main():
     os.system("cls")
-    
-    # Рядок для запуску: python hw_4_3.py salary_file.txt
-    # Рядок для запуску: python hw_4_3.py books
-    # print_dir(".venv")
+
     # print_dir("salary_file.txt")
-    
     print_dir("books")
+    # print_dir("D:\Books\Stephen King")
 
 
 def print_dir(path, indent=0):
-    base_path = Path(path)
-    if base_path.exists():
+    path = Path(path)
+    if path.exists():
 
-        if base_path.is_dir():
+        if path.is_dir():
             if indent == 0:
-                print(f"📦 {base_path}")  # Задати потрібний колір
+                print(f"📦 {path}")  # Задати потрібний колір
             else:
-                print(f"{' '*indent}📂 {base_path}")  # Задати потрібний колір
-            for path in base_path.iterdir():
-                print_dir(path, indent + 1)
+                print(f"{' '*indent}📂 {path.name}")  # Задати потрібний колір
+            for path in path.iterdir():
+                print_dir(path, indent + 2)
         else:
-            print(f"{' '*indent}📜 {base_path}")  # Задати потрібний колір
+            print(f"{' '*indent}📜 {path.name}")  # Задати потрібний колір
 
 
 if __name__ == "__main__":
